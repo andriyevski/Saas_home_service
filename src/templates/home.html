@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-    {% for visit in queryset %}
-        <ul>
-            <li>{{  visit.id }} - {{ visit.timestamp }}</li>
-        </ul>
-    {% endfor %}
+<ul>
+    <li>
+        <a href="about">Home</a>
+    </li>
+</ul>
+<h1>Home</h1>
+<div class="h3">Page visit: {{ page_visit_count }}</div>
+<div class="h3">Page percent: {{ percent }}%</div>
+<div class="h3">Total page visit: {{ total_visits }}</div>
 
 {% endblock content %}
