@@ -24,4 +24,6 @@ RUN pip install --upgrade pip && \
 RUN_PORT="${PORT:-8000}"
 
 python manage.py migrate --no-input
-gunicorn ${PROJ_NAME}.wsgi:application --bind "0.0.0.0:$RUN_PORT"
+
+# Команда для запуску проекту
+CMD ["gunicorn", "saas_home_service.wsgi:application", "--bind", "0.0.0.0:8000"
