@@ -38,7 +38,7 @@ WORKDIR /Saas
 COPY requirements.txt /tmp/requirements.txt
 
 # copy the project code into the container's working directory
-COPY ./src /Saas
+COPY ./src /Saas/src
 
 # Install the Python project requirements
 RUN pip install -r /tmp/requirements.txt
@@ -52,7 +52,7 @@ ENV DJANGO_DEBUG=${DJANGO_DEBUG}
 # database isn't available during build
 # run any other commands that do not need the database
 # such as:
-#RUN python manage.py vendor_pull
+RUN python manage.py vendor_pull
 RUN python manage.py collectstatic --noinput
 # whitenoise -> s3
 
