@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        <li>
+            <a href="../">Home</a>
+        </li>
+    </ul>
+    <h1>About Us</h1>
+    <div class="h3">Page visit: {{ page_visit_count }}</div>
+    <div class="h3">Page percent: {{ percent }}%</div>
+    <div class="h3">Total page visit: {{ total_visits }}</div>
+
+{% endblock content %}
