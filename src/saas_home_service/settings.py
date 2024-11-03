@@ -26,7 +26,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = 'django-insecure-6*-hu*-=bmb&#f4*wnx%+gkx=0ox7hd9uns_24$#m^m5+*4_=x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# this is for development only
+# environ is used to get the value of the environment variable DEBUG
+# if it is set to 'False' or '0', it is converted to False
+DEBUG = str(os.environ.get('DJANGO_DEBUG', True)).lower() == 'true'
+print("DEBUG", DEBUG, type(DEBUG))
 
 ALLOWED_HOSTS = [
     ".railway.app" # https://saas-home-service.railway.app
